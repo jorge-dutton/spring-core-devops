@@ -10,11 +10,13 @@ import org.springframework.stereotype.Component;
 public class ProdProfileSysOut {
 
     @Autowired
-    public ProdProfileSysOut(@Value("${guru.springframework.profile.message}") final String message) {
+    public ProdProfileSysOut(@Value("${guru.springframework.profile.message}") final String message,
+                             @Value("${guru.jms.user}") final String user) {
         System.out.println("################################");
         System.out.println("################################");
         System.out.println("##            PROD            ##");
-        System.out.println(message);
+        System.out.println(String.format("##      %s     ##", message));
+        System.out.println(String.format("##            %s             ##", user));
         System.out.println("################################");
         System.out.println("################################");
     }

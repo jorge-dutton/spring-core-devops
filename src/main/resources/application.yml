@@ -1,0 +1,42 @@
+spring:
+  activemq:
+    in-memory: true
+    pooled: false
+  profiles:
+    active: default
+guru:
+  jms:
+    server: 10.10.10.123
+    port: 3330
+    user: Ron
+    password: Burgundy
+  springframework:
+    profile:
+      message: Default profile YAML
+---
+spring:
+  profiles: dev
+name: dev-YAML
+environment: dev
+guru:
+  springframework:
+    profile:
+      message: Dev profile YAML
+---
+spring:
+  profiles: prod
+name: prod-YAML
+environment: prod
+guru:
+  springframework:
+    profile:
+      message: Prod profile YAML
+---
+spring:
+  profiles: qa
+name: qa-YAML
+environment: qa
+guru:
+  springframework:
+    profile:
+      message: QA profile YAML
